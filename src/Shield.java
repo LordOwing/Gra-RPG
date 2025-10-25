@@ -1,4 +1,4 @@
-public class Shield extends Item {
+public class Shield extends ItemDefault {
     private double blockChance;
 
     public Shield(String name, int durability, int attackDamage, int defenseDamage, double weight, int value, double blockChance) {

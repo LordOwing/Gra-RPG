@@ -1,4 +1,4 @@
-public class Sword extends Item {
+public class Sword extends ItemDefault {
     private double sharpness;
 
     public Sword(String name, int durability, int attackDamage, int defenseDamage, double weight, int value, double sharpness) {

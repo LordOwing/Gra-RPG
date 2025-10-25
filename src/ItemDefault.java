@@ -1,4 +1,4 @@
-public class Item {
+public class ItemDefault {
     protected String name;
     protected int durability;
     protected int attackDamage;
@@ -7,7 +7,7 @@ public class Item {
     protected int value;
     protected String rarity = "Rare";
 
-    public Item(String name, int durability, int attackDamage, int defenseDamage, double weight, int value) {
+    public ItemDefault(String name, int durability, int attackDamage, int defenseDamage, double weight, int value) {
         this.name = name;
         this.durability = durability;
         this.attackDamage = attackDamage;

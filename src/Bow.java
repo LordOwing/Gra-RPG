@@ -1,4 +1,4 @@
-public class Bow extends Item {
+public class Bow extends ItemDefault {
     private int range;
 
     public Bow(String name, int durability, int attackDamage, int defenseDamage, double weight, int value, int range) {

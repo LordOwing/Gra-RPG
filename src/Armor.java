@@ -1,4 +1,4 @@
-public class Armor extends Item {
+public class Armor extends ItemDefault {
     private String armorType;
 
     public Armor(String name, int durability, int attackDamage, int defenseDamage, double weight, int value, String armorType) {
