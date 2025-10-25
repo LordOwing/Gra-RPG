@@ -11,11 +11,12 @@ public class Warrior extends Character {
         this.energy = energy;
     }
 
-    static void normalAttack(){
+    public void normalAttack(Character character) {
 
     }
 
-    static void powerStrike(){
+
+    public void superAttack(Character character) {
 
     }
 
