@@ -1,15 +1,14 @@
 public class Shield extends Item {
     private double blockChance;
 
-    public Shield(String name, int durability, int attackDamage, int defenseDamage, double weight, int value, String rarity, double blockChance) {
+    public Shield(String name, int durability, int attackDamage, int defenseDamage, double weight, int value, double blockChance) {
         super(
                 name,
                 durability,
                 attackDamage,
                 defenseDamage,
                 weight,
-                value,
-                rarity
+                value
         );
         this.blockChance = blockChance;
     }
@@ -18,5 +17,4 @@ public class Shield extends Item {
         System.out.println(name + " próbuje zablokować atak!");
         use();
     }
-
 }

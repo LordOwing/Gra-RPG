@@ -79,10 +79,10 @@ public class Main {
 
         //ITEMY//
 
-        Sword sword = new Sword("Miecz Bohatera", 100, 25, 5, 3.5, 150, "Rare", 0.9);
-        Shield shield = new Shield("Tarcza Strażnika", 150, 5, 30, 6.0, 120, "Uncommon", 0.75);
-        Armor armor = new Armor("Zbroja Rycerska", 200, 0, 50, 15.0, 300, "Epic", "ciężka");
-        Bow bow = new Bow("Łuk Elfa", 80, 20, 0, 2.0, 200, "Legendary", 60);
+        Sword sword = new Sword("Miecz Bohatera", 100, 25, 5, 3.5, 150, 0.9);
+        Shield shield = new Shield("Tarcza Strażnika", 150, 5, 30, 6.0, 120, 0.75);
+        Armor armor = new Armor("Zbroja Rycerska", 200, 0, 50, 15.0, 300, "ciężka");
+        Bow bow = new Bow("Łuk Elfa", 80, 20, 0, 2.0, 200, 60);
 
         sword.displayInfo();
         sword.slash();

@@ -5,16 +5,15 @@ public class Item {
     protected int defenseDamage;
     protected double weight;
     protected int value;
-    protected String rarity;
+    protected String rarity = "Rare";
 
-    public Item(String name, int durability, int attackDamage, int defenseDamage, double weight, int value, String rarity) {
+    public Item(String name, int durability, int attackDamage, int defenseDamage, double weight, int value) {
         this.name = name;
         this.durability = durability;
         this.attackDamage = attackDamage;
         this.defenseDamage = defenseDamage;
         this.weight = weight;
         this.value = value;
-        this.rarity = "Rare";
     }
 
     public void use() {
@@ -23,10 +22,6 @@ public class Item {
         } else {
             System.out.println(name + " jest zniszczony!");
         }
-    }
-
-    public void repair(int amount) {
-        durability += amount;
     }
 
     public void displayInfo() {
@@ -38,5 +33,4 @@ public class Item {
         System.out.println("Waga: " + weight);
         System.out.println("Wartość: " + value + " złota");
     }
-
 }
