@@ -11,6 +11,7 @@ public class Bandit extends Character {
         this.energy = energy;
     }
 
+
     public void normalAttack(Character character) {
 
     }

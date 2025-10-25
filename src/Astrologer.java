@@ -11,6 +11,7 @@ public class Astrologer extends Character {
         this.energy = energy;
     }
 
+
     public void normalAttack(Character character) {
 
     }

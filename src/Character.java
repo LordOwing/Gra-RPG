@@ -24,6 +24,7 @@ public class Character{
     }
 
 
+
     public void superAttack(Character character) {
 
     }

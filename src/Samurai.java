@@ -16,6 +16,7 @@ public class Samurai extends Character {
     }
 
 
+
     public void superAttack(Character character) {
 
     }

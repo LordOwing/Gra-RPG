@@ -16,6 +16,7 @@ public class Warrior extends Character {
     }
 
 
+
     public void superAttack(Character character) {
 
     }
