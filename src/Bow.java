@@ -14,8 +14,10 @@ public class Bow extends Item {
         this.range = range;
     }
 
+
     public void shoot() {
         System.out.println(name + " wypuszcza strzałę na dystans " + range + " metrów!");
         use();
     }
+
 }

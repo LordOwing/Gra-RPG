@@ -17,4 +17,5 @@ public class Sword extends Item {
         System.out.println(name + " wykonuje potężne cięcie!");
         use();
     }
+
 }

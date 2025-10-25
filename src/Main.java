@@ -76,6 +76,7 @@ public class Main {
 
         }
 
+
         //ITEMY//
 
         Sword sword = new Sword("Miecz Bohatera", 100, 25, 5, 3.5, 150, "Rare", 0.9);

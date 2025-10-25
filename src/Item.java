@@ -38,4 +38,5 @@ public class Item {
         System.out.println("Waga: " + weight);
         System.out.println("Wartość: " + value + " złota");
     }
+
 }

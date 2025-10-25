@@ -14,7 +14,9 @@ public class Armor extends Item {
         this.armorType = armorType;
     }
 
+
     public void equip() {
         System.out.println("Założono zbroję typu: " + armorType);
     }
+
 }

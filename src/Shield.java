@@ -18,4 +18,5 @@ public class Shield extends Item {
         System.out.println(name + " próbuje zablokować atak!");
         use();
     }
+
 }
