@@ -25,10 +25,11 @@ public class Main {
 //        System.out.println("wybrałeś: "+chosen);
         Character player = null;
 
+
         if (chosen == 1) {
             System.out.println("Wybrałeś klase Astrologer");
             player = new Astrologer(name, 1, 1000, 10, 10, 10, 100);
-            System.out.print("nick: " + player.name + "\nlevel: " + player.level + "\nzdrowie: " + player.health + "\nsiła: " + player.strength + "\nzwinność: " + player.dexterity + "\ninteligenca: " + player.intelligence + "\n");
+            System.out.print("nick: " + player.name + "\nlevel: " + player.level + "\nzdrowie: " + player.health + "\nsiła: " + player.strength + "\nzwinność: " + player.dexterity + "\ninteligencja: " + player.intelligence + "\n");
         }
         else if (chosen == 2) {
             System.out.println("Wybrałeś klase Bandit");
@@ -55,43 +56,50 @@ public class Main {
             Random r= new Random();
             int hp_player = player.health;
             int hp_enemy = e1.health;
+            int action = 0;
 
 
             System.out.println("Co chcesz zrobić: \n1.Normalny atak \n2. Mocny atak \n3. Health potion (pozostło 2) \n4. Ult \n");
+            try {
+                action = scanner.nextInt();
 
-            int action = scanner.nextInt();
 
-            switch (action) {
-                case 1:
-                    int r1 = r.nextInt(101);
-                    hp_enemy -= r1;
-                    System.out.println(hp_enemy);
-                case 2:
-                    int r2 = r.nextInt(501);
-                case 3:
-
-                case 4:
-                    int r3 = r.nextInt(1001);
+                switch (action) {
+                    case 1:
+                        player.normalAttack(e1);
+                        break;
+                    case 2:
+                        player.superAttack(e1);
+                    case 3:
+                        break;
+                    case 4:
+                        player.Ult(e1);
+                }
+            }catch (java.util.InputMismatchException e) {
+                System.out.println("Niepoprawny wybór. Spróbuj ponownie.");
+                action = 0;
+                scanner.nextLine();
             }
-
         }
 
-
-        //ITEMY//
-
-        Sword sword = new Sword("Miecz Bohatera", 100, 25, 5, 3.5, 150, 0.9);
-        Shield shield = new Shield("Tarcza Strażnika", 150, 5, 30, 6.0, 120, 0.75);
-        Armor armor = new Armor("Zbroja Rycerska", 200, 0, 50, 15.0, 300, "ciężka");
-        Bow bow = new Bow("Łuk Elfa", 80, 20, 0, 2.0, 200, 60);
-
-        sword.displayInfo();
-        sword.slash();
-
-        shield.block();
-        armor.equip();
-        bow.shoot();
-
-
-
     }
+
+
+    //ITEMY//
+
+    Sword sword = new Sword("Miecz Bohatera", 100, 25, 5, 3.5, 150, 0.9);
+    Shield shield = new Shield("Tarcza Strażnika", 150, 5, 30, 6.0, 120, 0.75);
+    Armor armor = new Armor("Zbroja Rycerska", 200, 0, 50, 15.0, 300, "ciężka");
+    Bow bow = new Bow("Łuk Elfa", 80, 20, 0, 2.0, 200, 60);
+
+//        sword.displayInfo();
+//        sword.slash();
+//
+//        shield.block();
+//        armor.equip();
+//        bow.shoot();
+
+
+
+
 }
