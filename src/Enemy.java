@@ -1,9 +1,10 @@
 public class Enemy {
 
-        int health;
+    int health;
 
 
-        Enemy (int health) {
-            this.health = health;
-        }
+
+    Enemy (int health) {
+        this.health = health;
+    }
 }

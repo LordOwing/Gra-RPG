@@ -1,12 +1,11 @@
-import java.io.Serializable;
-
-public class Character implements Attackable {
+public class Character{
     String name;
     int level;
     int health;
     int strength;
     int dexterity;
     int intelligence;
+    int energy;
 
 
 //    public Character(String name, int level, int health, int strength, int dexterity, int intelligence) {
@@ -18,8 +17,19 @@ public class Character implements Attackable {
 //        this.intelligence = intelligence;
 //    }
 
-    @Override
-    public void attack() {
+
+    public void normalAttack(Enemy character) {
 
     }
+
+
+
+    public boolean superAttack(Enemy character) {
+        return  false;
+    }
+
+    public boolean Ult(Enemy character){
+        return false;
+    }
+
 }
