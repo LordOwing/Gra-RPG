@@ -84,12 +84,16 @@ public class Main {
         Eq[0] = new HealingPotion("Mikstura Leczenia", "do picia", 3);
         Eq[1] = new StrenghtPotion("Mikstura Siły", "do picia", 2);
         Eq[2] = new PoisonPotion("Mikstura Zatrucia", "do rzucania", 1);
+        Eq[3] = new StrenghtAmulet("Amulet Mocy");
+        Eq[4] = new HealthAmulet("Amulet Życia");
 
         choosen(Eq, 0, player, e1);
         choosen(Eq, 0, player, e1);
         choosen(Eq, 1, player, e1);
         choosen(Eq, 1, player, e1);
         choosen(Eq, 2, player, e1);
+        choosen(Eq, 3, player, e1);
+        choosen(Eq, 4, player, e1);
 
     }
 
