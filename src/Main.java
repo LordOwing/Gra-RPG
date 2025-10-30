@@ -50,7 +50,7 @@ public class Main {
         else {
             throw new ArithmeticException("Błąd! Wybierz klase od 1 do 4");
         }
-
+        System.out.println(player.toString());
         boolean flag = true;
         boolean defeated = false;
         String answer;
@@ -69,20 +69,6 @@ public class Main {
 
     }
 
-
-    //ITEMY//
-
-    Sword sword = new Sword("Miecz Bohatera", 100, 25, 5, 3.5, 150, 0.9);
-    Shield shield = new Shield("Tarcza Strażnika", 150, 5, 30, 6.0, 120, 0.75);
-    Armor armor = new Armor("Zbroja Rycerska", 200, 0, 50, 15.0, 300, "ciężka");
-    Bow bow = new Bow("Łuk Elfa", 80, 20, 0, 2.0, 200, 60);
-
-//        sword.displayInfo();
-//        sword.slash();
-//
-//        shield.block();
-//        armor.equip();
-//        bow.shoot();
 
 
 

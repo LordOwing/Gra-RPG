@@ -1,9 +1,7 @@
-interface Attackable {
+interface Compare {
 //    public void attack();
 
-    void normalAttack(Enemy enemy);
+    public void compare();
+;
 
-    void superAttack(Enemy enemy);
-
-    void Ult(Enemy enemy);
 }

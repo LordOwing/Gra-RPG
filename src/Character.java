@@ -21,7 +21,17 @@ public class Character{
 
     }
 
-
+    @Override
+    public String toString() {
+        return "Character{" +
+                "name='" + name + '\'' +
+                ", health=" + health +
+                ", strength=" + strength +
+                ", dexterity=" + dexterity +
+                ", intelligence=" + intelligence +
+                ", energy=" + energy +
+                '}';
+    }
 
     public boolean superAttack(Character enemy) {
         return  false;
