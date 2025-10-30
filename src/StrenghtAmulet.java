@@ -9,7 +9,7 @@ public class StrenghtAmulet extends Item {
         System.out.println(player.name + " zakłada amulet: " + name);
         player.strength += 100;
         uses -= 1;
-        System.out.println("Boost do siły zwiekszony o +1");
+        System.out.println("Boost do siły zwiekszony o +100");
         destroy();
     }
 }

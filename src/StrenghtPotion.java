@@ -15,7 +15,7 @@ public class StrenghtPotion extends Item {
         }
 
         player.strength += 50;
-        System.out.println(player.name + " wypił " + name + " i dostał boosta do siły +2.");
+        System.out.println(player.name + " wypił " + name + " i dostał boosta do siły +50.");
 
         uses--;
         if (uses == 0) destroy();
