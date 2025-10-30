@@ -79,7 +79,42 @@ public class Main {
 
         //ITEMY//
 
+        Itemy[] Eq = new Itemy[5];
 
+        Eq[0] = new HealingPotion("Mikstura Leczenia", "do picia", 3);
+        Eq[1] = new StrenghtPotion("Mikstura Siły", "do picia", 2);
+        Eq[2] = new PoisonPotion("Mikstura Zatrucia", "do rzucania", 1);
+
+        choosen(Eq, 0, player, e1);
+        choosen(Eq, 0, player, e1);
+        choosen(Eq, 1, player, e1);
+        choosen(Eq, 1, player, e1);
+        choosen(Eq, 2, player, e1);
 
     }
+
+    public static void choosen(Itemy[] ekwipunek, int slot, Character player, Enemy enemy) {
+        System.out.println("\nWybrano slot " + slot + ":");
+
+        if (slot < 0 || slot >= ekwipunek.length) {
+            System.out.println("Niepoprawny numer slotu.");
+            return;
+        }
+
+        Itemy item = ekwipunek[slot];
+
+        if (item == null) {
+            System.out.println("Ten slot jest pusty.");
+            return;
+        }
+
+        item.use(player, enemy);
+
+        if (item.getUses() <= 0) {
+            ekwipunek[slot] = null;
+            System.out.println("Slot " + slot + " został opróżniony.");
+        }
+    }
+
 }
+
