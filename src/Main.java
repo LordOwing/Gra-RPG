@@ -79,32 +79,6 @@ public class Main {
 
         //ITEMY//
 
-        Sword sword = new Sword("Miecz Bohatera", 100, 25, 5, 3.5, 150, 0.9);
-        Shield shield = new Shield("Tarcza Strażnika", 150, 5, 30, 6.0, 120, 0.75);
-        Armor armor = new Armor("Zbroja Rycerska", 200, 0, 50, 15.0, 300, "ciężka");
-        Bow bow = new Bow("Łuk Elfa", 80, 20, 0, 2.0, 200, 60);
-
-        Equipment eq1 = new Equipment();
-
-        eq1.addItem(sword, 0);
-        eq1.addItem(shield, 1);
-        eq1.addItem(armor, 2);
-        eq1.addItem(bow, 3);
-
-        eq1.displayEq();
-
-        eq1.chooseSlot(0);
-        UseItem.uzyj(eq1);
-
-        eq1.chooseSlot(1);
-        UseItem.uzyj(eq1);
-
-        eq1.chooseSlot(2);
-        UseItem.uzyj(eq1);
-
-        eq1.chooseSlot(3);
-        UseItem.uzyj(eq1);
-
 
 
     }
