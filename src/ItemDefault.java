@@ -19,6 +19,7 @@ public class ItemDefault {
     public void use() {
         if (durability > 0) {
             durability--;
+            System.out.println(name + " został użyty.");
         } else {
             System.out.println(name + " jest zniszczony!");
         }

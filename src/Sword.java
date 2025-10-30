@@ -1,8 +1,9 @@
 public class Sword extends ItemDefault {
+
     private double sharpness;
 
     public Sword(String name, int durability, int attackDamage, int defenseDamage, double weight, int value, double sharpness) {
-        super(name,
+        super(  name,
                 durability,
                 attackDamage,
                 defenseDamage,
@@ -12,8 +13,14 @@ public class Sword extends ItemDefault {
         this.sharpness = sharpness;
     }
 
-    public void slash() {
-        System.out.println(name + " wykonuje potężne cięcie!");
-        use();
+
+    @Override
+    public void use() {
+        if (durability > 0) {
+            durability--;
+            System.out.println(name + " wykonuje potężne cięcie!");
+        } else {
+            System.out.println(name + " jest zniszczony i nie może ciąć!");
+        }
     }
 }

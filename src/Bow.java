@@ -1,9 +1,9 @@
 public class Bow extends ItemDefault {
+
     private int range;
 
     public Bow(String name, int durability, int attackDamage, int defenseDamage, double weight, int value, int range) {
-        super(
-                name,
+        super(  name,
                 durability,
                 attackDamage,
                 defenseDamage,
@@ -13,8 +13,14 @@ public class Bow extends ItemDefault {
         this.range = range;
     }
 
-    public void shoot() {
-        System.out.println(name + " wypuszcza strzałę na dystans " + range + " metrów!");
-        use();
+
+    @Override
+    public void use() {
+        if (durability > 0) {
+            durability--;
+            System.out.println(name + " wypuszcza strzałę na dystans " + range + " metrów!");
+        } else {
+            System.out.println(name + " jest zniszczony i nie może strzelać!");
+        }
     }
 }

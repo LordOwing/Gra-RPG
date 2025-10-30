@@ -1,9 +1,9 @@
 public class Armor extends ItemDefault {
+
     private String armorType;
 
     public Armor(String name, int durability, int attackDamage, int defenseDamage, double weight, int value, String armorType) {
-        super(
-                name,
+        super(  name,
                 durability,
                 attackDamage,
                 defenseDamage,
@@ -13,7 +13,13 @@ public class Armor extends ItemDefault {
         this.armorType = armorType;
     }
 
-    public void equip() {
-        System.out.println("Założono zbroję typu: " + armorType);
+
+    @Override
+    public void use() {
+        if (durability > 0) {
+            System.out.println("Zakładasz zbroję typu " + armorType + ".");
+        } else {
+            System.out.println(name + " jest zniszczona i nie nadaje się do noszenia!");
+        }
     }
 }
