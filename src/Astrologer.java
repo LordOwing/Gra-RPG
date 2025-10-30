@@ -5,9 +5,8 @@ import java.util.Random;
 public class Astrologer extends Character{
 
 
-    public Astrologer(String name, int level, int health, int strength, int dexterity, int intelligence, int energy) {
+    public Astrologer(String name,int health, int strength, int dexterity, int intelligence, int energy) {
         this.name = name;
-        this.level = level;
         this.health = health;
         this.strength = strength;
         this.dexterity = dexterity;
@@ -16,7 +15,7 @@ public class Astrologer extends Character{
     }
 
     @Override
-    public void normalAttack(Enemy enemy) {
+    public void normalAttack(Character enemy) {
         Random r = new Random();
         int dmg = r.nextInt(101) + (2*intelligence) + strength + dexterity;
         enemy.health -= dmg;
@@ -24,7 +23,7 @@ public class Astrologer extends Character{
     }
 
     @Override
-    public boolean superAttack(Enemy enemy) {
+    public boolean superAttack(Character enemy) {
         if(this.energy >= 10){
             Random r = new Random();
             int dmg = r.nextInt(501) + (2*intelligence) + strength + dexterity;
@@ -40,7 +39,7 @@ public class Astrologer extends Character{
     }
 
     @Override
-    public boolean Ult(Enemy enemy){
+    public boolean Ult(Character enemy){
         if(this.energy >= 20){
             Random r = new Random();
             int dmg = r.nextInt(1001) + (2*intelligence) + strength + dexterity;

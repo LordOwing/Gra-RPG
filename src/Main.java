@@ -1,10 +1,11 @@
 import java.util.Scanner;
 import java.util.Random;
 public class Main {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int champ;
+        int defeatedChampions =0;
 
         System.out.println("Elden Ring");
         System.out.printf("Witaj w grze która niszczy ludzi i doprowadza ich do załamania i depresji! Miłej zabawy :3 \n");
@@ -13,7 +14,7 @@ public class Main {
 
         String name = scanner.nextLine();
 
-        Enemy e1 = new Enemy(6080);
+
 
 
 //        System.out.print("nick: " + c1.name + "\nlevel: " + c1.level + "\nzdrowie: " + c1.health + "\nsiła: " + c1.strength + "\nzwinność: " + c1.dexterity + "\ninteligenca: " + c1.intelligence + "\n");
@@ -28,62 +29,43 @@ public class Main {
 
         if (chosen == 1) {
             System.out.println("Wybrałeś klase Astrologer");
-            player = new Astrologer(name, 1, 1000, 10, 10, 10, 100);
-            System.out.print("nick: " + player.name + "\nlevel: " + player.level + "\nzdrowie: " + player.health + "\nsiła: " + player.strength + "\nzwinność: " + player.dexterity + "\ninteligencja: " + player.intelligence + "\n");
+            player = new Astrologer(name, 1000, 10, 10, 10, 100);
+            System.out.print("nick: " + player.name  + "\nzdrowie: " + player.health + "\nsiła: " + player.strength + "\nzwinność: " + player.dexterity + "\ninteligencja: " + player.intelligence + "\n");
         }
         else if (chosen == 2) {
             System.out.println("Wybrałeś klase Bandit");
-            player = new Bandit(name, 1, 1000, 10, 10, 10, 100);
+            player = new Bandit(name, 1000, 10, 10, 10, 100);
 
         }
         else if (chosen == 3) {
             System.out.println("Wybrałeś klase Samurai");
-            player = new Samurai(name, 1, 1000, 10, 10, 10, 100);
+            player = new Samurai(name, 1000, 10, 10, 10, 100);
 
         }
         else if (chosen == 4) {
             System.out.println("Wybrałeś klase Warrior");
-            player = new Samurai(name, 1, 1000, 10, 10, 10, 100);
+            player = new Samurai(name, 1000, 10, 10, 10, 100);
 
         }
         else {
             throw new ArithmeticException("Błąd! Wybierz klase od 1 do 4");
         }
 
-        System.out.println("Napotkałeś pierwszego bossa Godrick the Grafted");
-
-        while (player.health > 0 || e1.health > 0) {
-            Random r= new Random();
-            int hp_player = player.health;
-            int hp_enemy = e1.health;
-            int action = 0;
-            if(player.energy <= 95){
-                player.energy += 5;
+        boolean flag = true;
+        boolean defeated = false;
+        String answer;
+        while (flag == true && defeated == false) {
+            if(BattleManager.battle(player)){
+                defeatedChampions++;
+                System.out.println("Gratuluję, wygrałeś walkę! Czy chcesz kontynuować? Odpowiedz tak lub nie: ");
+                answer = scanner.next();
+                if (!answer.equalsIgnoreCase("tak")) {flag = false;}
+                continue;
             }
-
-
-            System.out.println("Co chcesz zrobić: \n1.Normalny atak \n2. Mocny atak \n3. Health potion (pozostło 2) \n4. Ult \n");
-            try {
-                action = scanner.nextInt();
-
-
-                switch (action) {
-                    case 1:
-                        player.normalAttack(e1);
-                        break;
-                    case 2:
-                        player.superAttack(e1);
-                    case 3:
-                        break;
-                    case 4:
-                        player.Ult(e1);
-                }
-            }catch (java.util.InputMismatchException e) {
-                System.out.println("Niepoprawny wybór. Spróbuj ponownie.");
-                action = 0;
-                scanner.nextLine();
-            }
+            defeated = true;
+            System.out.println("Przykro mi ale poległeś. ");
         }
+        System.out.println("Koniec gry," + name +  " pokonałeś:  " + defeatedChampions + " wrogów");
 
     }
 

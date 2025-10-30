@@ -1,6 +1,5 @@
 public class Character{
     String name;
-    int level;
     int health;
     int strength;
     int dexterity;
@@ -18,17 +17,17 @@ public class Character{
 //    }
 
 
-    public void normalAttack(Enemy character) {
+    public void normalAttack(Character character) {
 
     }
 
 
 
-    public boolean superAttack(Enemy character) {
+    public boolean superAttack(Character enemy) {
         return  false;
     }
 
-    public boolean Ult(Enemy character){
+    public boolean Ult(Character enemy){
         return false;
     }
 

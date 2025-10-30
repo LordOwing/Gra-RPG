@@ -3,9 +3,8 @@ import java.util.Random;
 public class Bandit extends Character{
 
 
-    public Bandit(String name, int level, int health, int strength, int dexterity, int intelligence, int energy) {
+    public Bandit(String name, int health, int strength, int dexterity, int intelligence, int energy) {
         this.name = name;
-        this.level = level;
         this.health = health;
         this.strength = strength;
         this.dexterity = dexterity;
@@ -14,7 +13,7 @@ public class Bandit extends Character{
     }
 
     @Override
-    public void normalAttack(Enemy enemy) {
+    public void normalAttack(Character enemy) {
         Random r = new Random();
         int dmg = r.nextInt(101) + (3*dexterity) + strength + intelligence;
         enemy.health -= dmg;
@@ -22,7 +21,7 @@ public class Bandit extends Character{
     }
 
     @Override
-    public boolean superAttack(Enemy enemy) {
+    public boolean superAttack(Character enemy) {
         if(this.energy >= 10){
             Random r = new Random();
             int dmg = r.nextInt(501) + (3*dexterity) + strength + intelligence;
@@ -38,7 +37,7 @@ public class Bandit extends Character{
     }
 
     @Override
-    public boolean Ult(Enemy enemy){
+    public boolean Ult(Character enemy){
         if(this.energy >= 20){
             Random r = new Random();
             int dmg = r.nextInt(1001) + (3*dexterity) + strength + intelligence;
