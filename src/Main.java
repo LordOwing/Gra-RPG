@@ -84,12 +84,26 @@ public class Main {
         Armor armor = new Armor("Zbroja Rycerska", 200, 0, 50, 15.0, 300, "ciężka");
         Bow bow = new Bow("Łuk Elfa", 80, 20, 0, 2.0, 200, 60);
 
-        sword.displayInfo();
-        sword.slash();
+        Equipment eq1 = new Equipment();
 
-        shield.block();
-        armor.equip();
-        bow.shoot();
+        eq1.addItem(sword, 0);
+        eq1.addItem(shield, 1);
+        eq1.addItem(armor, 2);
+        eq1.addItem(bow, 3);
+
+        eq1.displayEq();
+
+        eq1.chooseSlot(0);
+        UseItem.uzyj(eq1);
+
+        eq1.chooseSlot(1);
+        UseItem.uzyj(eq1);
+
+        eq1.chooseSlot(2);
+        UseItem.uzyj(eq1);
+
+        eq1.chooseSlot(3);
+        UseItem.uzyj(eq1);
 
 
 
