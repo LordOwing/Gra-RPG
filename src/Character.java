@@ -1,12 +1,10 @@
-import java.io.Serializable;
-
 public class Character{
     String name;
-    int level;
     int health;
     int strength;
     int dexterity;
     int intelligence;
+    int energy;
 
 
 //    public Character(String name, int level, int health, int strength, int dexterity, int intelligence) {
@@ -23,9 +21,24 @@ public class Character{
 
     }
 
-
-
-    public void superAttack(Character character) {
-
+    @Override
+    public String toString() {
+        return "Character{" +
+                "name='" + name + '\'' +
+                ", health=" + health +
+                ", strength=" + strength +
+                ", dexterity=" + dexterity +
+                ", intelligence=" + intelligence +
+                ", energy=" + energy +
+                '}';
     }
+
+    public boolean superAttack(Character enemy) {
+        return  false;
+    }
+
+    public boolean Ult(Character enemy){
+        return false;
+    }
+
 }

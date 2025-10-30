@@ -1,3 +1,7 @@
-interface Attackable {
-    public void attack();
+interface Compare {
+//    public void attack();
+
+    public void compare();
+;
+
 }
