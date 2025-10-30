@@ -1,4 +1,5 @@
 # Gra-RPG
+[Opis do aktualizacji bo koncepcja się zmieniła]
 Opis projektu gry RPG
 
 Struktura projektu (7 plików .java)
