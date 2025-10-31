@@ -1,89 +1,99 @@
 # Gra-RPG
 [Opis do aktualizacji bo koncepcja się zmieniła]
-Opis projektu gry RPG
+Opis projektu
 
-Struktura projektu (7 plików .java)
+Projekt to konsolowa gra RPG inspirowana Elden Ring, w której gracz tworzy swoją postać, wybiera jedną z czterech klas i walczy z przeciwnikami w systemie turowym.
+Gra wykorzystuje zasady programowania obiektowego — dziedziczenie, interfejsy i polimorfizm — do zarządzania logiką postaci, walki i przedmiotów.
 
-1. Attackable.java - Interfejs definiujący możliwość atakowania
-2. Character.java - Główna klasa bazowa dla wszystkich postaci
-3. Warrior.java - Klasa specjalizująca się w walce wręcz
-4. Mage.java - Klasa specjalizująca się w magii
-5. Archer.java - Klasa specjalizująca się w walce dystansowej
-6. BattleSimulator.java - Klasa zarządzająca mechaniką walki
-7. Game.java - Główna klasa uruchamiająca program
+Struktura projektu (14 plików .java)
+Klasy postaci:
 
----
+Astrologer.java – klasa reprezentująca maga, używa ataków magicznych kosztem energii.
 
-Ogólny opis gry
+Bandit.java – szybka postać z wysoką zręcznością.
 
-Gra to symulator walki pomiędzy postaciami różnych klas RPG. Program tworzy kilka postaci, które następnie toczą ze sobą walkę wykorzystując charakterystyczne dla siebie ataki i statystyki. Ataki głównej postaci są decydowanie przez gracza.
+Samurai.java – zbalansowany wojownik.
 
----
+Warrior.java – silna i wytrzymała postać o dużej sile fizycznej.
 
-Szczegółowy opis komponentów
+Wszystkie klasy postaci dziedziczą po klasie Character i implementują interfejs Attackable.
 
-Interfejs Attackable
 
-Definiuje podstawową zdolność do atakowania innych postaci. Zawiera metodę umożliwiającą wykonanie ataku na wybrany cel. Wszystkie klasy bojowe muszą implementować ten interfejs.
+--------
 
-Klasa bazowa Character
 
-Stanowi fundament dla wszystkich postaci w grze. Zawiera:
+Klasy pomocnicze i systemowe:
 
-· Podstawowe informacje: imię, poziom doświadczenia
-· Statystyki: punkty zdrowia (HP)
-· Wspólne funkcjonalności wyświetlania informacji o postaci
+Character.java – klasa bazowa zawierająca wspólne pola i metody dla wszystkich postaci (imię postaci, zdrowie, energia, siła, zręczność, inteligencja).
 
-Klasy specjalistyczne
+Enemy.java – klasa przeciwnika, posiada punkty życia i może być atakowana przez gracza.
 
-Warrior - specjalista walki wręcz:
+Interface.java / Attackable.java – interfejs definiujący możliwość atakowania (normalAttack, superAttack, ultimate).
 
-· Najwyższe punkty zdrowia
-· Ataki fizyczne o umiarkowanej sile
+Main.java – główna klasa programu, zawiera logikę gry: wybór klasy postaci, pętlę walki, obsługę akcji gracza i regenerację energii.
 
-Mage - użytkownik magii:
+--------
 
-· Najniższe punkty zdrowia
-· Najsilniejsze ataki magiczne
+Przedmioty i ulepszenia:
 
-Archer - strzelec dystansowy:
+Item.java – klasa bazowa dla wszystkich przedmiotów.
 
-· Zrównoważone statystyki
-· Ataki na odległość
+HealingPotion.java – przywraca punkty zdrowia gracza.
 
-System walki
+PoisonPotion.java – może zatruć przeciwnika.
 
-BattleSimulator odpowiada za:
+StrengthPotion.java – tymczasowo zwiększa siłę postaci.
 
-· Koordynowanie przebiegu potyczek
-· Obsługę kolejności ataków
-· Sprawdzanie warunków zwycięstwa
+HealthAmulet.java – zwiększa maksymalne zdrowie postaci.
 
-Game - główna klasa programu:
+StrengthAmulet.java – zwiększa siłę fizyczną postaci.
 
-· Tworzy instancje postaci
-· Inicjuje symulację walki
-· Wyświetla wyniki potyczek
+--------
 
----
+Opis rozgrywki
 
-Wykorzystane mechanizmy programowania obiektowego:
+Tworzenie postaci
+Gracz podaje imię i wybiera jedną z czterech klas (Astrologer, Bandit, Samurai, Warrior).
 
-Dziedziczenie - Klasy Warrior, Mage i Archer dziedziczą wspólne cechy z klasy Character, jednocześnie rozszerzając ją o swoje specjalizacje.
+Prezentacja statystyk
+Po wyborze klasy wyświetlane są statystyki bohatera: zdrowie, siła, zręczność, inteligencja, energia.
 
-Interfejsy - Wszystkie klasy bojowe implementują interfejs Attackable, gwarantując, że każda postać może atakować.
+Walka
+Gracz walczy z pierwszym bossem (boss jest losowany losowa z 4 klas postaci np. boss Bandit).
+Walka przebiega w turach. W każdej turze gracz może wybrać jedną z akcji:
 
-Polimorfizm - Możliwość traktowania wszystkich postaci jako ogólnego typu Character, podczas gdy każda wykonuje atak na swój unikalny sposób.
+normalny atak
 
-Enkapsulacja - Ukrywanie wewnętrznych mechanizmów klas przed użytkownikiem, udostępniając tylko niezbędne metody.
+super atak (koszt energii -10)
 
----
+użycie mikstury leczenia
 
-Przebieg rozgrywki
+ult (koszt energii -20)
 
-1. Inicjalizacja - Program tworzy postacie różnych klas
-2. Prezentacja - Wyświetlenie statystyk początkowych
-3. Walka - Wrogie postacie i gracz na przemian wykonują ataki
-4. Rezultaty - Po każdej akcji wyświetlane są aktualne statystyki
-5. Zakończenie - Gra kończy się po określonej liczbie rund lub gdy zdrowie którejś postaci spadnie do zera
+Regeneracja energii
+Po każdej turze, jeśli energia jest mniejsza niż 100, postać odzyskuje +5 punktów energii.
+
+Zakończenie walki
+Gra kończy się, gdy zdrowie gracza spadnie do 0 lub gdy gracz zdecyduje się przestać grać.
+Wyświetlane są wyniki oraz statystyki końcowe (ile pokonał wrogów).
+
+--------
+
+Mechanika i zasady
+
+System energii – energia jest zużywana przy silnych atakach i regeneruje się automatycznie w każdej turze.
+
+System przedmiotów – klasy postaci mogą korzystać z mikstur lub amuletów zwiększających statystyki.
+
+Pętla walki – działa dopóki gracz ma więcej niż 0 HP i gdy gra nie zostałą przerwana.
+
+--------
+
+Wykorzystane mechanizmy OOP
+
+Dziedziczenie – klasy postaci dziedziczą wspólne właściwości i metody z klasy Character.
+
+Polimorfizm – zmienna typu Character może przechowywać dowolną klasę postaci (np. Samurai, Bandit), a każda klasa wykonuje własną wersję metod attack().
+
+Interfejs – Attackable wymusza na każdej klasie implementację metod ataku.
 
