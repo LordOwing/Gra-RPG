@@ -16,7 +16,7 @@ Samurai.java – zbalansowany wojownik.
 
 Warrior.java – silna i wytrzymała postać o dużej sile fizycznej.
 
-Wszystkie klasy postaci dziedziczą po klasie Character i implementują interfejs Attackable.
+Wszystkie klasy postaci dziedziczą po klasie Character.
 
 
 --------
@@ -28,9 +28,11 @@ Character.java – klasa bazowa zawierająca wspólne pola i metody dla wszystki
 
 Enemy.java – klasa przeciwnika, posiada punkty życia i może być atakowana przez gracza.
 
-Interface.java / Attackable.java – interfejs definiujący możliwość atakowania (normalAttack, superAttack, ultimate).
+Interface.java / Compare.java – interfejs definiujący możliwość  porównywania statystyk
 
-Main.java – główna klasa programu, zawiera logikę gry: wybór klasy postaci, pętlę walki, obsługę akcji gracza i regenerację energii.
+Main.java – główna klasa programu, zawiera logikę gry: wybór klasy postaci, przejście do walki i koniec gry.
+
+BattleManager.java - klasa w której zachodzi losowanie wroga, przedmiotów i sama walka
 
 --------
 
@@ -55,8 +57,7 @@ Opis rozgrywki
 Tworzenie postaci
 Gracz podaje imię i wybiera jedną z czterech klas (Astrologer, Bandit, Samurai, Warrior).
 
-Prezentacja statystyk
-Po wyborze klasy wyświetlane są statystyki bohatera: zdrowie, siła, zręczność, inteligencja, energia.
+
 
 Walka
 Gracz walczy z pierwszym bossem (boss jest losowany losowa z 4 klas postaci np. boss Bandit).
@@ -95,5 +96,5 @@ Dziedziczenie – klasy postaci dziedziczą wspólne właściwości i metody z k
 
 Polimorfizm – zmienna typu Character może przechowywać dowolną klasę postaci (np. Samurai, Bandit), a każda klasa wykonuje własną wersję metod attack().
 
-Interfejs – Attackable wymusza na każdej klasie implementację metod ataku.
+Interfejs – Compare pozwala porównywać statystki różnych postaci i przedmiotów 
 
