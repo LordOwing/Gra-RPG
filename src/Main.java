@@ -30,7 +30,7 @@ public class Main {
         if (chosen == 1) {
             System.out.println("Wybrałeś klase Astrologer");
             player = new Astrologer(name, 1000, 10, 10, 10, 100);
-            System.out.print("nick: " + player.name  + "\nzdrowie: " + player.health + "\nsiła: " + player.strength + "\nzwinność: " + player.dexterity + "\ninteligencja: " + player.intelligence + "\n");
+            
         }
         else if (chosen == 2) {
             System.out.println("Wybrałeś klase Bandit");
